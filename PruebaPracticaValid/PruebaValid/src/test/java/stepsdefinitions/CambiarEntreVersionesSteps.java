@@ -13,9 +13,9 @@ import static utils.Constantes.ACTOR_NAME;
 
 public class CambiarEntreVersionesSteps {
 
-    @When("^el usuario desde la parte inferior de la página selecciona la opción (.*)$")
-    public void elUsuarioDesdeLaParteInferiorDeLaPaginaSeleccionaLaOpcion(String versionMoviles) {
-         theActorCalled(ACTOR_NAME).attemptsTo(CambiarVersionMovilesTask.aLaOpcion(versionMoviles));
+    @When("^el usuario desde la parte inferior de la página selecciona la opción Versión para móviles$")
+    public void elUsuarioDesdeLaParteInferiorDeLaPaginaSeleccionaLaOpcionVersionParaMoviles() {
+         theActorCalled(ACTOR_NAME).attemptsTo(CambiarVersionMovilesTask.aLaOpcion());
 
     }
 

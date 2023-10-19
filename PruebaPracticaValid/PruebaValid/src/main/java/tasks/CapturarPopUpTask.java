@@ -25,7 +25,7 @@ public class CapturarPopUpTask implements Task {
         // Ejecuta un script JavaScript para obtener el mensaje de validación del campo captcha
         String mensajePopUp = (String) js.executeScript("return arguments[0].validationMessage;", captcha);
         // System.out.println(mensajePopUp); //Esta línea de código se utiliza solo para la creación de scripts de prueba
-        // Almacena el mensaje en una variable y luego acceder a ella en otras clases
+        // Almacena el mensaje en una variable para luego acceder a ella en otras clases
         actor.remember("popUpMessage", mensajePopUp);
 
     }

@@ -1,6 +1,5 @@
 package tasks;
 
-import exceptions.ErrorInfoException;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;

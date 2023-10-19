@@ -14,17 +14,17 @@ import static utils.Constantes.ACTOR_NAME;
 
 public class CompararDosRevisionesEnHistorialSteps {
 
-    @When("^el usuario ingresa a la opción (.*)$")
-    public void elUsuarioIngresaALaOpcionVerHistorial(String verHistorial) {
-         theActorCalled(ACTOR_NAME).attemptsTo(IrVerHistorialTask.enWikipedia(verHistorial));
+    @When("^el usuario ingresa a la opción Ver historial$")
+    public void elUsuarioIngresaALaOpcionVerHistorialVerHistorial() {
+         theActorCalled(ACTOR_NAME).attemptsTo(IrVerHistorialTask.enWikipedia());
     }
     @And("^el usuario selecciona dos RADIO BUTTON$")
     public void elUsuarioSeleccionaDosRadioButton() {
         theActorCalled(ACTOR_NAME).attemptsTo(SeleccionarRadioButtonTask.enHistorial());
     }
-    @When("^el usuario hace clic en el botón (.*)$")
-    public void elUsuarioHaceClicEnElBoton(String botonEsperado) {
-        theActorCalled(ACTOR_NAME).attemptsTo(CompararRevisionesSeleccionadasTask.enHistorial(botonEsperado));
+    @When("^el usuario hace clic en el botón Comparar revisiones seleccionadas$")
+    public void elUsuarioHaceClicEnElBotonCompararRevisionesSeleccionadas() {
+        theActorCalled(ACTOR_NAME).attemptsTo(CompararRevisionesSeleccionadasTask.enHistorial());
     }
     @Then("^el usuario valida que existan dos campos de texto para comparar las revisiones$")
     public void elUsuarioDeberiaVerDosCamposDeTextoParaCompararLasRevisiones() {

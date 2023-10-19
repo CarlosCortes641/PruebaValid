@@ -10,7 +10,6 @@ import tasks.AbrirWikipediaTask;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static org.hamcrest.core.IsEqual.equalTo;
 import static utils.Constantes.ACTOR_NAME;
 
 public class TituloPaginaInicioSteps {

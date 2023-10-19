@@ -2,12 +2,8 @@ package tasks;
 
 import exceptions.ErrorInfoException;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.ensure.Ensure;
-import questions.ValidarMensajePopUpQuestions;
 import ui.WikipediaCrearCuentaPage;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;

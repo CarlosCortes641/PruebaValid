@@ -13,6 +13,7 @@ public class AbrirWikipediaTask implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
              // Abre la página de Wikipedia utilizando la URL definida en las constantes.
              actor.attemptsTo(
                  Open.url(Constantes.PAGINA_WIKIPEDIA)
