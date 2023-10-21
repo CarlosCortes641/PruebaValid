@@ -23,9 +23,6 @@ public class IrACrearCuentaTask implements Task {
 
     }
 
-
-
-
     // Método estático para crear una instancia de la tarea 'IrACrearCuentaTask'
     public static IrACrearCuentaTask enWikipedia() {
 

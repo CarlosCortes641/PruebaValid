@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import questions.ValidarCamposConTextosQuestions;
 import tasks.CompararRevisionesSeleccionadasTask;
-import tasks.IrVerHistorialTask;
+import tasks.IrAVerHistorialTask;
 import tasks.SeleccionarRadioButtonTask;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -16,7 +16,7 @@ public class CompararDosRevisionesEnHistorialSteps {
 
     @When("^el usuario ingresa a la opción Ver historial$")
     public void elUsuarioIngresaALaOpcionVerHistorialVerHistorial() {
-         theActorCalled(ACTOR_NAME).attemptsTo(IrVerHistorialTask.enWikipedia());
+         theActorCalled(ACTOR_NAME).attemptsTo(IrAVerHistorialTask.enWikipedia());
     }
     @And("^el usuario selecciona dos RADIO BUTTON$")
     public void elUsuarioSeleccionaDosRadioButton() {

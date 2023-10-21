@@ -9,8 +9,7 @@ import ui.WikipediaPortadaPage;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class IrVerHistorialTask implements Task {
-
+public class IrAVerHistorialTask implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
@@ -25,8 +24,8 @@ public class IrVerHistorialTask implements Task {
     }
 
     // Método estático para crear una instancia de IrVerHistorialTask
-    public static IrVerHistorialTask enWikipedia() {
+    public static IrAVerHistorialTask enWikipedia() {
 
-        return instrumented(IrVerHistorialTask.class);
+        return instrumented(IrAVerHistorialTask.class);
     }
 }

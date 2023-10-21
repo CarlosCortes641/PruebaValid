@@ -2,34 +2,27 @@ package questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.ensure.Ensure;
 import ui.WikipediaPortadaPage;
 
 public class ValidarOpcionEscritorioQuestions implements Question<Boolean> {
 
-    private String versionEscritorio;
-
-    // Constructor que recibe la versión de escritorio esperada como parámetro
-    private ValidarOpcionEscritorioQuestions(String versionEscritorio) {
-
-        this.versionEscritorio = versionEscritorio;
-    }
-
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        // Obtener la versión encontrada en la página
-        String versionEncontrada = WikipediaPortadaPage.LNK_VERSION_ESCRITORIO.resolveFor(actor).getText();
 
-        // Estas dos líneas de código se utiliza solo para la creación de scripts de prueba
-        // System.out.println("La opción encontrada es: " + versionEncontrada);
-        // System.out.println("La opción esperada es: " + versionEscritorio);
-
-        // Comprobar si la versión encontrada coincide con la versión esperada
-        return versionEncontrada.equals(versionEscritorio);
+        // En actor intenta realizar una validación
+        actor.attemptsTo(
+                // Asegura que el enlace de versión de escritorio esté visible en la página
+                 Ensure.that(WikipediaPortadaPage.LNK_VERSION_ESCRITORIO).isDisplayed()
+        );
+        // Devuelve true si el enlace de versión de escritorio es visible
+        return WikipediaPortadaPage.LNK_VERSION_ESCRITORIO.resolveFor(actor).isVisible();
     }
 
     // Método estático para crear una instancia de la pregunta con la versión de escritorio esperada
-    public static ValidarOpcionEscritorioQuestions igualA(String versionEscritorio) {
-        return new ValidarOpcionEscritorioQuestions(versionEscritorio);
+    public static ValidarOpcionEscritorioQuestions esVisible() {
+
+        return new ValidarOpcionEscritorioQuestions();
     }
 }

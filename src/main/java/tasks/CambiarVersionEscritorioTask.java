@@ -20,8 +20,6 @@ public class CambiarVersionEscritorioTask implements Task {
             actor.attemptsTo(
                     // Utiliza la interacción ScrollEndPage para desplazarnos al final de la página
                     ScrollEndPage.toTheEnd(),
-                    // Espera hasta que el enlace a la versión de Escritorio esté visible
-                    WaitUntil.the(WikipediaPortadaPage.LNK_VERSION_ESCRITORIO, isVisible()).forNoMoreThan(10).seconds(),
                     // Hace clic en el enlace de la versión de Escritorio
                     Click.on(WikipediaPortadaPage.LNK_VERSION_ESCRITORIO)
             );

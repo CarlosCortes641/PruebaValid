@@ -17,11 +17,10 @@ public class CambiarVersionMovilesTask implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
+            // El actor intenta realizar una serie de acciones para cambiar a la versión de Moviles
             actor.attemptsTo(
                     // Desplazarse al final de la página
                     ScrollEndPage.toTheEnd(),
-                    // Esperar a que el enlace de la versión móvil sea visible
-                    WaitUntil.the(WikipediaPortadaPage.LNK_VERSION_MOVIL, isVisible()).forNoMoreThan(10).seconds(),
                     // Hacer clic en el enlace de la versión móvil
                     Click.on(WikipediaPortadaPage.LNK_VERSION_MOVIL)
             );
@@ -29,7 +28,8 @@ public class CambiarVersionMovilesTask implements Task {
     }
 
     // Método estático para crear una instancia de la tarea
-    public static Performable aLaOpcion() {
+    public static Performable versionMoviles() {
+
         return instrumented(CambiarVersionMovilesTask.class);
     }
 }

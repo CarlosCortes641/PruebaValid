@@ -15,14 +15,6 @@ public class SeleccionarRadioButtonTask implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        /*
-        // Estas cuatro líneas de código se utiliza solo para la creación de scripts de prueba
-        String textoRbtUno = Text.of(WikipediaHistorialPage.TXT_RBT_UNO).viewedBy(actor).asString();
-        String textoRbtDos = Text.of(WikipediaHistorialPage.TXT_RBT_DOS).viewedBy(actor).asString();
-        System.out.println("El texto del radio button uno es: " + textoRbtUno);
-        System.out.println("El texto del radio button dos es: " + textoRbtDos);
-        */
-
         try {
             // El actor intenta realizar la siguiente secuencia de acciones:
              actor.attemptsTo(
@@ -40,7 +32,6 @@ public class SeleccionarRadioButtonTask implements Task {
             // Si ocurre una excepción (error), la capturamos y lanzamos una nueva excepción personalizada
             throw new ErrorInfoException("Error no encuentra Radio button en Ver historial.", e);
         }
-
 
     }
 

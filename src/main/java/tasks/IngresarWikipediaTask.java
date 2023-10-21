@@ -8,7 +8,7 @@ import net.serenitybdd.screenplay.actions.Open;
 import utils.Constantes;
 
 
-public class AbrirWikipediaTask implements Task {
+public class IngresarWikipediaTask implements Task {
 
 
     @Override
@@ -16,14 +16,14 @@ public class AbrirWikipediaTask implements Task {
 
              // Abre la página de Wikipedia utilizando la URL definida en las constantes.
              actor.attemptsTo(
-                 Open.url(Constantes.PAGINA_WIKIPEDIA)
+                     Open.url(Constantes.PAGINA_WIKIPEDIA)
              );
 
     }
 
     // Método estático para crear una instancia de esta tarea.
     public static Performable enLaPaginaPortada() {
-        return Instrumented.instanceOf(AbrirWikipediaTask.class)
+        return Instrumented.instanceOf(IngresarWikipediaTask.class)
                 .newInstance();
     }
 

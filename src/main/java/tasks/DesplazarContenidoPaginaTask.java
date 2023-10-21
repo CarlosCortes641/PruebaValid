@@ -19,7 +19,6 @@ public class DesplazarContenidoPaginaTask implements Task {
 
                 // Desplaza la página hasta el elemento identificado por LBL_SUBTITULO_ANALISIS_CEEM.
                 ScrollToTarget.to(WikipediaResultadoBusquedaPage.LBL_SUBTITULO_ANALISIS_CEEM),  // Utilizamos la interacción ScrollToTarget
-
                 // Espera hasta que el elemento LBL_SUBTITULO_ANALISIS_CEEM esté visible por un máximo de 10 segundos.
                 WaitUntil.the(WikipediaResultadoBusquedaPage.LBL_SUBTITULO_ANALISIS_CEEM, isVisible()).forNoMoreThan(10).seconds()
         );
@@ -28,7 +27,7 @@ public class DesplazarContenidoPaginaTask implements Task {
     }
 
     // Método estático para crear una instancia de la tarea DesplazarContenidoPaginaTask
-    public static DesplazarContenidoPaginaTask aSubtitulo() {
+    public static DesplazarContenidoPaginaTask busquedaTitulo() {
         return Tasks.instrumented(DesplazarContenidoPaginaTask.class);
     }
 }

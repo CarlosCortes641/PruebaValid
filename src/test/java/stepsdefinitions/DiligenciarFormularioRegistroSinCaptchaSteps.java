@@ -11,6 +11,8 @@ import java.util.List;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.Assert.assertEquals;
 import static utils.Constantes.ACTOR_NAME;
 
 public class DiligenciarFormularioRegistroSinCaptchaSteps {
@@ -31,11 +33,14 @@ public class DiligenciarFormularioRegistroSinCaptchaSteps {
 
     @Then("^el usuario valida que se presente el pop up (.*) en el campo del CAPTCHA$")
     public void elUsuarioValidaQueSePresenteElPopUpEnElCampoDelCAPTCHA(String mensajeEsperado) {
-      theActorCalled(ACTOR_NAME).attemptsTo(
-              CrearCuentaTask.crearCuenta(),
-              CapturarPopUpTask.enCaptcha()
-      );
-      theActorCalled(ACTOR_NAME).should(seeThat(ValidarMensajePopUpQuestions.igualA(mensajeEsperado)));
+        theActorCalled(ACTOR_NAME).attemptsTo(
+                CrearCuentaTask.crearCuenta()
+
+        );
+        String mensajePopUp = theActorCalled(ACTOR_NAME).asksFor(ValidarMensajePopUpQuestions.enCaptcha());
+        assertEquals(mensajeEsperado, mensajePopUp);
     }
+
+
 
 }
