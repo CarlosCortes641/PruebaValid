@@ -20,7 +20,7 @@ public class ValidarOpcionEscritorioQuestions implements Question<Boolean> {
         return WikipediaPortadaPage.LNK_VERSION_ESCRITORIO.resolveFor(actor).isVisible();
     }
 
-    // Método estático para crear una instancia de la pregunta con la versión de escritorio esperada
+    // Método estático para crear una instancia de la pregunta con la versión de escritorio esté visible
     public static ValidarOpcionEscritorioQuestions esVisible() {
 
         return new ValidarOpcionEscritorioQuestions();

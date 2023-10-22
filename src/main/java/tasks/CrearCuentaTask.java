@@ -11,19 +11,18 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClic
 
 public class CrearCuentaTask implements Task {
 
-
+    // Sobrescritura del método
     @Override
     public <T extends Actor> void performAs(T actor) {
-
-            // Actor hace clic en el botón 'Crea cuenta'
+            // Actor intenta hacer clic en el botón 'Crea cuenta'
             actor.attemptsTo(
                     WaitUntil.the(WikipediaCrearCuentaPage.BTN_CREA_CUENTA, isClickable()),
                     Click.on(WikipediaCrearCuentaPage.BTN_CREA_CUENTA)
             );
     }
 
+    // Método estático para crear una instancia de la tarea
     public static CrearCuentaTask crearCuenta() {
-
         return instrumented(CrearCuentaTask.class);
     }
 }

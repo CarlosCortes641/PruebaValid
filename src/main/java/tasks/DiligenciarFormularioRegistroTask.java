@@ -1,6 +1,5 @@
 package tasks;
 
-import exceptions.ErrorInfoException;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
@@ -22,28 +21,20 @@ public class DiligenciarFormularioRegistroTask implements Task {
         this.correo = correo;
     }
 
+    // Sobrescritura del método
     @Override
     public <T extends Actor> void performAs(T actor) {
-
-        try {
-            // El actor intenta realizar la siguiente secuencia de acciones:
+            // El actor intenta ingresar los datos en el formulario
             actor.attemptsTo(
-                    // Ingresa los datos en los campos correspondientes
                     Enter.theValue(nombre).into(WikipediaCrearCuentaPage.INPUT_NOMBRE_USUARIO),
                     Enter.theValue(contrasena).into(WikipediaCrearCuentaPage.INPUT_CONTRASENA),
                     Enter.theValue(contrasena).into(WikipediaCrearCuentaPage.INPUT_CONFIRMAR_CONTRASENA),
                     Enter.theValue(correo).into(WikipediaCrearCuentaPage.INPUT_CORREO_ELECTRONICO)
             );
-          // Capturar y manejar excepciones con mensajes descriptivos
-        } catch (Exception e) {
-            throw new ErrorInfoException("Error al diligenciar formulario de registro de cuenta.", e);
-        }
-
     }
 
-    // Método estático para crear una instancia de la tarea 'DiligenciarFormularioRegistroTask'
+    // Método estático para crear una instancia de la tarea
     public static DiligenciarFormularioRegistroTask sinCaptcha(String nombre, String contrasena, String correo) {
         return instrumented(DiligenciarFormularioRegistroTask.class, nombre, contrasena, correo);
     }
-
 }

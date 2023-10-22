@@ -32,4 +32,5 @@ public class TituloPaginaInicioSteps {
     public void elUsuarioValidaQueElTituloSea(String tituloEsperado) {
         theActorCalled(ACTOR_NAME).should(seeThat(ValidarTituloQuestions.enTarget(WikipediaPortadaPage.LBL_TITULO), equalTo(tituloEsperado)));
     }
+
 }

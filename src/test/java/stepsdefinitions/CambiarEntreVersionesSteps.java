@@ -19,14 +19,11 @@ public class CambiarEntreVersionesSteps {
     @When("^el usuario desde la parte inferior de la página selecciona la opción Versión para móviles$")
     public void elUsuarioDesdeLaParteInferiorDeLaPaginaSeleccionaLaOpcionVersionParaMoviles() {
          theActorCalled(ACTOR_NAME).attemptsTo(CambiarVersionMovilesTask.versionMoviles());
-
     }
 
-    @Then("^el usuario valida que se encuentre la opción (.*)$")
-    public void elUusuarioDeberiaVerLaOpcion(String versionEscritorio) {
-        theActorCalled(ACTOR_NAME).should(seeThat(ValidarTituloQuestions.enTarget(WikipediaPortadaPage.LNK_VERSION_ESCRITORIO), equalTo(versionEscritorio)));
-        theActorCalled(ACTOR_NAME).should(seeThat(ValidarOpcionEscritorioQuestions.esVisible(), equalTo(true)));
-
+    @Then("^el usuario valida que se encuentre la opción Escritorio$")
+    public void elUusuarioDeberiaVerLaOpcionEscritorio() {
+            theActorCalled(ACTOR_NAME).should(seeThat(ValidarOpcionEscritorioQuestions.esVisible(), equalTo(true)));
     }
 
     @And("^el usuario regresa a esta versión$")

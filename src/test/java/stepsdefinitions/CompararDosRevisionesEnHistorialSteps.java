@@ -25,7 +25,7 @@ public class CompararDosRevisionesEnHistorialSteps {
         theActorCalled(ACTOR_NAME).attemptsTo(SeleccionarRadioButtonTask.enHistorial());
     }
 
-    @When("^el usuario hace clic en el botón Comparar revisiones seleccionadas$")
+    @And("^el usuario hace clic en el botón Comparar revisiones seleccionadas$")
     public void elUsuarioHaceClicEnElBotonCompararRevisionesSeleccionadas() {
         theActorCalled(ACTOR_NAME).attemptsTo(CompararRevisionesSeleccionadasTask.enHistorial());
     }

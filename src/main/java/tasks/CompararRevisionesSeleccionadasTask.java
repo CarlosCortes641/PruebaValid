@@ -11,21 +11,17 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class CompararRevisionesSeleccionadasTask implements Task {
 
-
+    // Sobrescritura del método
     @Override
     public <T extends Actor> void performAs(T actor) {
-
+            // Actor intenta hacer clic en el botón 'Comparar'
             actor.attemptsTo(
-                    // Espera hasta que el botón de comparar sea visible
                     WaitUntil.the(WikipediaHistorialPage.BTN_COMPARAR, isVisible()).forNoMoreThan(10).seconds(),
-                    // Hace clic en el botón de comparar
                     Click.on(WikipediaHistorialPage.BTN_COMPARAR)
             );
-
-
     }
 
-    // Método estático para crear una instancia de CompararRevisionesSeleccionadasTask
+    // Método estático para crear una instancia de la tarea
     public static CompararRevisionesSeleccionadasTask enHistorial() {
         return instrumented(CompararRevisionesSeleccionadasTask.class);
     }

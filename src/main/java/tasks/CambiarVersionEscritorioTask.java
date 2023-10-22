@@ -5,27 +5,21 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 import ui.WikipediaPortadaPage;
-
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class CambiarVersionEscritorioTask implements Task {
 
+    // Sobrescritura del método
     @Override
     public <T extends Actor> void performAs(T actor) {
-
-
             // El actor intenta realizar una serie de acciones para cambiar a la versión de Escritorio
             actor.attemptsTo(
-                    // Utiliza la interacción ScrollEndPage para desplazarnos al final de la página
-                    ScrollEndPage.toTheEnd(),
-                    // Hace clic en el enlace de la versión de Escritorio
+                    ScrollEndPage.toTheEnd(), // Utilizamos la interacción ScrollEndPage
                     Click.on(WikipediaPortadaPage.LNK_VERSION_ESCRITORIO)
             );
     }
 
-    // Método estático para crear una instancia de CambiarVersionEscritorioTask
+    // Método estático para crear una instancia de la tarea
     public static CambiarVersionEscritorioTask versionEscritorio() {
         return Tasks.instrumented(CambiarVersionEscritorioTask.class);
     }

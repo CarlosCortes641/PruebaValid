@@ -17,7 +17,6 @@ import static utils.Constantes.ACTOR_NAME;
 
 public class DiligenciarFormularioRegistroSinCaptchaSteps {
 
-
     @When("^el usuario selecciona la opción Crear una cuenta$")
     public void elUsuarioSeleccionaLaOpcionCrearUnaCuenta() {
         theActorCalled(ACTOR_NAME).attemptsTo(IrACrearCuentaTask.enWikipedia());
@@ -32,9 +31,7 @@ public class DiligenciarFormularioRegistroSinCaptchaSteps {
 
     @Then("^el usuario valida que se presente el pop up (.*) en el campo del CAPTCHA$")
     public void elUsuarioValidaQueSePresenteElPopUpEnElCampoDelCAPTCHA(String mensajeEsperado) {
-        theActorCalled(ACTOR_NAME).attemptsTo(
-                CrearCuentaTask.crearCuenta()
-        );
+        theActorCalled(ACTOR_NAME).attemptsTo(CrearCuentaTask.crearCuenta());
         String mensajePopUp = theActorCalled(ACTOR_NAME).asksFor(ValidarMensajePopUpQuestions.enCaptcha());
         assertEquals(mensajeEsperado, mensajePopUp);
     }

@@ -40,5 +40,5 @@ Feature: Validar funcionalidades de búsqueda, registro, versiones y comparativa
   Scenario: Comparar dos revisiones en el historial
     When el usuario ingresa a la opción Ver historial
     And el usuario selecciona dos RADIO BUTTON
-    When el usuario hace clic en el botón Comparar revisiones seleccionadas
+    And el usuario hace clic en el botón Comparar revisiones seleccionadas
     Then el usuario valida que existan dos campos de texto para comparar las revisiones

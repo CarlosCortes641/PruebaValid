@@ -20,24 +20,19 @@ public class BuscarPalabraTask implements Task {
         this.palabraClave = palabraClave;
     }
 
-
+    // Sobrescritura del método
     @Override
     public <T extends Actor> void performAs(T actor) {
-             // El actor realiza la búsqueda de la palabra clave en la página web.
-             actor.attemptsTo(
-                 // Esperar a que el campo de búsqueda esté visible durante un máximo de 10 segundos
-                 WaitUntil.the(WikipediaPortadaPage.INPUT_BUSQUEDA, isVisible()).forNoMoreThan(10).seconds(),
-                 // Ingresar la palabra clave en el campo de búsqueda
-                 SendKeys.of(palabraClave).into(WikipediaPortadaPage.INPUT_BUSQUEDA),
-                 // Hacer clic en el botón de búsqueda
-                 Click.on(WikipediaPortadaPage.BTN_BUSCAR)
+            // El actor intenta realizar la búsqueda de la palabra clave en la página web.
+            actor.attemptsTo(
+                    WaitUntil.the(WikipediaPortadaPage.INPUT_BUSQUEDA, isVisible()).forNoMoreThan(10).seconds(),
+                    SendKeys.of(palabraClave).into(WikipediaPortadaPage.INPUT_BUSQUEDA),
+                    Click.on(WikipediaPortadaPage.BTN_BUSCAR)
             );
-
     }
 
     // Método estático para crear una instancia de la tarea con la palabra clave
     public static BuscarPalabraTask conPalabra(String palabraClave) {
         return instrumented(BuscarPalabraTask.class, palabraClave);
     }
-
 }

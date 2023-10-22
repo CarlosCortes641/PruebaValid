@@ -11,21 +11,18 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class IrAVerHistorialTask implements Task {
 
+    // Sobrescritura del método
     @Override
     public <T extends Actor> void performAs(T actor) {
-
+            // Actor intenta hacer clic en el link 'Ver Historial'
             actor.attemptsTo(
-                    // Espera hasta que el enlace "Ver Historial" esté visible
                     WaitUntil.the(WikipediaPortadaPage.LNK_VER_HISTORIAL, isVisible()).forNoMoreThan(10).seconds(),
-                    // Hace clic en el enlace "Ver Historial"
                     Click.on(WikipediaPortadaPage.LNK_VER_HISTORIAL)
             );
-
     }
 
-    // Método estático para crear una instancia de IrVerHistorialTask
+    // Método estático para crear una instancia de la tarea
     public static IrAVerHistorialTask enWikipedia() {
-
         return instrumented(IrAVerHistorialTask.class);
     }
 }

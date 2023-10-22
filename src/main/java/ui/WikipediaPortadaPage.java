@@ -4,8 +4,6 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-
-
 public class WikipediaPortadaPage extends PageObject {
     public static Target LBL_TITULO = Target.the("Título página de inicio").located(By.id("Bienvenidos_a_Wikipedia,"));
     public static Target LNK_CREAR_CUENTA = Target.the("Link crear cuenta").located(By.id("pt-createaccount-2"));

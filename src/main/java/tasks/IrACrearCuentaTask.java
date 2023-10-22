@@ -11,21 +11,18 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class IrACrearCuentaTask implements Task {
 
+    // Sobrescritura del método
     @Override
     public <T extends Actor> void performAs(T actor) {
-
-        actor.attemptsTo(
-                    // Espera hasta que el enlace 'Crear cuenta' sea visible por un máximo de 10 segundos
+            // Actor intenta hacer clic en el link 'Crear cuenta'
+            actor.attemptsTo(
                     WaitUntil.the(WikipediaPortadaPage.LNK_CREAR_CUENTA, isVisible()).forNoMoreThan(10).seconds(),
-                    // Hace clic en el enlace 'Crear cuenta'
                     Click.on(WikipediaPortadaPage.LNK_CREAR_CUENTA)
-        );
-
+            );
     }
 
-    // Método estático para crear una instancia de la tarea 'IrACrearCuentaTask'
+    // Método estático para crear una instancia de la tarea
     public static IrACrearCuentaTask enWikipedia() {
-
         return instrumented(IrACrearCuentaTask.class);
     }
 }
