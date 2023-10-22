@@ -22,4 +22,5 @@ public class BuscarAnalisisCeemSteps {
     public void elUsuarioValidaQueEnLosResultadosSeEncuentra(String titulo){
         theActorCalled(ACTOR_NAME).should(seeThat(ValidarTituloQuestions.enTarget(WikipediaResultadoBusquedaPage.LBL_SUBTITULO_ANALISIS_CEEM), equalTo(titulo)));
     }
+
 }

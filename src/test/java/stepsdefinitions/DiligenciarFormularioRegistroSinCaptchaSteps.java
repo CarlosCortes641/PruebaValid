@@ -5,13 +5,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import questions.ValidarMensajePopUpQuestions;
-import tasks.*;
+import tasks.CrearCuentaTask;
+import tasks.DiligenciarFormularioRegistroTask;
+import tasks.IrACrearCuentaTask;
 
 import java.util.List;
 
-import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static utils.Constantes.ACTOR_NAME;
 
@@ -22,7 +22,6 @@ public class DiligenciarFormularioRegistroSinCaptchaSteps {
     public void elUsuarioSeleccionaLaOpcionCrearUnaCuenta() {
         theActorCalled(ACTOR_NAME).attemptsTo(IrACrearCuentaTask.enWikipedia());
     }
-
 
     @And("^el usuario diligencia el formulario de registro sin CAPTCHA$")
     public void elUsuarioDiligenciaElFormularioDeRegistroSinCAPTCHA(DataTable dataTable) {
@@ -35,12 +34,9 @@ public class DiligenciarFormularioRegistroSinCaptchaSteps {
     public void elUsuarioValidaQueSePresenteElPopUpEnElCampoDelCAPTCHA(String mensajeEsperado) {
         theActorCalled(ACTOR_NAME).attemptsTo(
                 CrearCuentaTask.crearCuenta()
-
         );
         String mensajePopUp = theActorCalled(ACTOR_NAME).asksFor(ValidarMensajePopUpQuestions.enCaptcha());
         assertEquals(mensajeEsperado, mensajePopUp);
     }
-
-
 
 }

@@ -22,5 +22,6 @@ public class ValidarCamposConTextosQuestions implements Question<Boolean> {
     public static ValidarCamposConTextosQuestions deLaRevisionComparadas() {
         return new ValidarCamposConTextosQuestions();
     }
+
 }
 

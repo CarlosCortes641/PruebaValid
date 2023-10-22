@@ -11,18 +11,18 @@ import ui.WikipediaPortadaPage;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static utils.Constantes.ACTOR_NAME;
 
 public class TituloPaginaInicioSteps {
 
     @Before
-    public void setUP() {
+    public void setUp() {
         // Configuración previa al escenario de prueba
         OnStage.setTheStage(new OnlineCast());
         theActorCalled(ACTOR_NAME);
     }
+
     @Given("^el usuario ingresa a la página de Wikipedia$")
     public void elUsuarioIngresaALaPaginaDeWikipedia() {
          theActorCalled(ACTOR_NAME).attemptsTo(IngresarWikipediaTask.enLaPaginaPortada());
