@@ -4,6 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import net.thucydides.core.annotations.Step;
 import ui.WikipediaCrearCuentaPage;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -13,6 +14,7 @@ public class CrearCuentaTask implements Task {
 
     // Sobrescritura del método
     @Override
+    @Step("{0} hace clic en el botón 'Crear tu cuenta'")
     public <T extends Actor> void performAs(T actor) {
             // Actor intenta hacer clic en el botón 'Crea cuenta'
             actor.attemptsTo(

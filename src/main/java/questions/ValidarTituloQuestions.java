@@ -3,6 +3,7 @@ package questions;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.targets.Target;
+
 public class ValidarTituloQuestions implements Question<String> {
 
     private final Target target;

@@ -3,6 +3,7 @@ package tasks;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.thucydides.core.annotations.Step;
 import ui.WikipediaCrearCuentaPage;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -23,6 +24,7 @@ public class DiligenciarFormularioRegistroTask implements Task {
 
     // Sobrescritura del método
     @Override
+    @Step("{0} diligencia el formulario sin hacer CAPTCHA")
     public <T extends Actor> void performAs(T actor) {
             // El actor intenta ingresar los datos en el formulario
             actor.attemptsTo(

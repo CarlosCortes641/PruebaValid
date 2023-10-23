@@ -5,6 +5,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.thucydides.core.annotations.Step;
 import ui.WikipediaPortadaPage;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -12,6 +13,7 @@ public class CambiarVersionMovilesTask implements Task {
 
     // Sobrescritura del método
     @Override
+    @Step("{0} cambia a la versión para Móviles")
     public <T extends Actor> void performAs(T actor) {
             // El actor intenta realizar una serie de acciones para cambiar a la versión de Moviles
             actor.attemptsTo(

@@ -5,6 +5,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.SendKeys;
 import net.serenitybdd.screenplay.waits.WaitUntil;
+import net.thucydides.core.annotations.Step;
 import ui.WikipediaPortadaPage;
 
 
@@ -22,6 +23,7 @@ public class BuscarPalabraTask implements Task {
 
     // Sobrescritura del método
     @Override
+    @Step("{0} realiza la búsqueda de la palabra Sistema")
     public <T extends Actor> void performAs(T actor) {
             // El actor intenta realizar la búsqueda de la palabra clave en la página web.
             actor.attemptsTo(
