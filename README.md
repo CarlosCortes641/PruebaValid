@@ -41,9 +41,9 @@ Los informes generados se encontrarán en la carpeta `target/site/serenity`.
 ## Estructura del Proyecto
 
 El proyecto se organiza de la siguiente manera:
-- `src/test/java`: Contiene los paquetes de runners y steps definitions, donde se definen las pruebas y sus pasos.
 - `src/main/java`: Contiene clases y componentes de Screenplay, como: UI, interactions, tasks, questions, exceptions y utils.
-- `src/main/resources`: Contiene los controladores de Chrome necesarios para la automatización, así como las características
+- `src/test/java`: Contiene los paquetes de runners y steps definitions, donde se definen las pruebas y sus pasos.
+- `src/test/resources`: (drivers) contiene los controladores de Chrome necesarios para la automatización, así como las características
                         (features) escritas en Gherkin que definen el comportamiento de las pruebas.
 - `target`: Directorio de salida con informes y resultados generados por las pruebas automatizadas.
 
