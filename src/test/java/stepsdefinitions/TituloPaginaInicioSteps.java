@@ -11,6 +11,7 @@ import ui.WikipediaPortadaPage;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static utils.Constantes.ACTOR_NAME;
 
@@ -25,12 +26,12 @@ public class TituloPaginaInicioSteps {
 
     @Given("^el usuario ingresa a la página de Wikipedia$")
     public void elUsuarioIngresaALaPaginaDeWikipedia() {
-         theActorCalled(ACTOR_NAME).attemptsTo(IngresarWikipediaTask.enLaPaginaPortada());
+         theActorInTheSpotlight().attemptsTo(IngresarWikipediaTask.enLaPaginaPortada());
     }
 
     @Then("^el usuario valida que el título sea (.*)$")
     public void elUsuarioValidaQueElTituloSea(String tituloEsperado) {
-        theActorCalled(ACTOR_NAME).should(seeThat(ValidarTituloQuestions.enTarget(WikipediaPortadaPage.LBL_TITULO), equalTo(tituloEsperado)));
+        theActorInTheSpotlight().should(seeThat(ValidarTituloQuestions.enTarget(WikipediaPortadaPage.LBL_TITULO), equalTo(tituloEsperado)));
     }
 
 }
